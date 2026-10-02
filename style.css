@@ -1,0 +1,144 @@
+/* 1. Theme & variables */
+:root {
+  --bg: #fff4d6;
+  --card: #ffffff;
+  --text: #2b2b2b;
+  --accent: #ff6b9d;
+  --good: #3ecf6e;
+  --bad: #ff5d5d;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #23203a;
+    --card: #2f2b4d;
+    --text: #f4f1ff;
+  }
+}
+
+
+/* 2. Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 40px;
+}
+
+p {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+
+/* 3. Card */
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 28px;
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: 0 8px 24px #0002;
+  text-align: center;
+}
+
+
+/* 4. Menu & buttons */
+button {
+  padding: 18px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+
+/* 5. Question screen */
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bar {
+  height: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #0002;
+  overflow: hidden;
+}
+
+.bar div {
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.q {
+  margin: 16px 0 24px;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.opts button.good {
+  background: var(--good);
+}
+
+.opts button.bad {
+  background: var(--bad);
+}
+
+
+/* 6. Feedback & results */
+.msg {
+  height: 30px;
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stars {
+  margin: 10px 0;
+  font-size: 40px;
+}
